@@ -119,18 +119,20 @@ def func():
 def aufgabe_6():
     while True:
         # 1. Eingabe vom Benutzer erhalten und in eine ganze Zahl (int) konvertieren
-        user_input = input("Bitte geben Sie eine Zahl ein: ")
+        zahl = input("Bitte geben Sie eine Zahl ein: ")
 
         try:
+            # Programm beenden
+            if zahl == "ende":
+                print("Programm beendet.")
+                break
             # Versuche, die Eingabe in eine ganze Zahl umzuwandeln
-            user_number = int(user_input)
-            print(f"Sie haben die Zahl {user_number} eingegeben.")
-
+            zahl = int(zahl)
+            print(f"Sie haben die Zahl {zahl} eingegeben.")
             # 2. Überprüfung des Typs mit isinstance()
-            if isinstance(user_number, int):
+            if isinstance(zahl, int):
                 print("Die Eingabe ist vom Typ int.")
-            else:
-                print("Die Eingabe ist nicht vom Typ int.")  # Dieser Fall sollte hier nicht eintreten
+
         except ValueError:
             # Fehler, falls die Eingabe keine gültige Zahl ist
             print("Die Eingabe war keine gültige Zahl. Bitte geben Sie eine ganze Zahl ein.")
